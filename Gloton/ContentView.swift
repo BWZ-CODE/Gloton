@@ -9,15 +9,80 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        ZStack {
+            Color.bg.ignoresSafeArea(.all)
+            VStack {
+                Image(systemName:"list.bullet").font(.system(size: 20)).frame(maxWidth: .infinity,  alignment: .leading).padding(.leading, 20)
+                Text("¿Que te gustaria cocinar hoy?").padding().font(.title).fontWeight(.bold).multilineTextAlignment(.center)
+                HStack{
+                    Image(systemName: "magnifyingglass").padding(10)
+                    TextField("Birria de res", text: .constant(""))
+                }.background(Color.gray.opacity(0.3)).cornerRadius(10).shadow(radius: 5).padding()
+                
+                VStack{
+                    Text("Pensados para ti").padding().font(.title2).fontWeight(.bold).frame(maxWidth: .infinity,  alignment: .leading)
+                    ScrollView(.horizontal, showsIndicators: false, content: {
+                        HStack{
+                            VStack(alignment: .leading){
+                                Image(.b59Bc74Ff811F55Fff1893910268Ab59).resizable().frame(width: 110, height: 100).clipShape(Circle())
+                                Text("Arroz con leche").multilineTextAlignment(.center)
+                            }.frame(width:150, height:150)
+                            VStack(alignment: .leading){
+                                Image(.b59Bc74Ff811F55Fff1893910268Ab59).resizable().frame(width: 110, height: 100).clipShape(Circle())
+                                Text("Arroz con leche").multilineTextAlignment(.center)
+                            }.frame(width:150, height:150)
+                            VStack(alignment: .leading){
+                                Image(.b59Bc74Ff811F55Fff1893910268Ab59).resizable().frame(width: 110, height: 100).clipShape(Circle())
+                                Text("Arroz con leche").multilineTextAlignment(.center)
+                            }.frame(width:150, height:150)
+                            VStack(alignment: .leading){
+                                Image(.b59Bc74Ff811F55Fff1893910268Ab59).resizable().frame(width: 110, height: 100).clipShape(Circle())
+                                Text("Arroz con leche").multilineTextAlignment(.center)
+                            }.frame(width:150, height:150)
+                        }
+                        
+                    })
+                }.background(Color.btn.opacity(0.9)).cornerRadius(20).padding(.horizontal)
+                    VStack{
+                        Text("Mas populares").font(.title2).padding().fontWeight(.bold).frame(maxWidth: .infinity, alignment: .leading)
+                        ScrollView(.vertical, showsIndicators: false, content: {
+                            HStack{
+                                Image(.b59Bc74Ff811F55Fff1893910268Ab59).resizable().frame(width: 100, height: 100).clipShape(Circle())
+                                Text("Receta de Pollo caramelizado con especias")
+                            }
+                            HStack{
+                                Image(.b59Bc74Ff811F55Fff1893910268Ab59).resizable().frame(width: 100, height: 100).clipShape(Circle())
+                                Text("Receta de Pollo caramelizado con especias")
+                                
+                            }
+                            HStack{
+                                Image(.b59Bc74Ff811F55Fff1893910268Ab59).resizable().frame(width: 100, height: 100).clipShape(Circle())
+                                Text("Receta de Pollo caramelizado con especias")
+                                
+                            }
+                            HStack{
+                                Image(.b59Bc74Ff811F55Fff1893910268Ab59).resizable().frame(width: 100, height: 100).clipShape(Circle())
+                                Text("Receta de Pollo caramelizado con especias")
+                                
+                            }
+                        })
+                    }.background(Color.btn.opacity(0.9)).cornerRadius(20).padding(.horizontal)
+                    HStack{
+                        Image(systemName: "bell.fill").font(.system(size: 25)).padding()
+                        Spacer()
+                        Image(systemName: "person.circle.fill").font(.system(size: 25)).padding()
+                        Spacer()
+                        Image(systemName: "house.fill").font(.system(size: 25)).padding()
+                        Spacer()
+                        Image(systemName: "globe.americas.fill").font(.system(size: 25)).padding()
+                        
+        
+                    }.background(Color.btn.opacity(0.9)).cornerRadius(60).padding(.horizontal)
+                }
+            }
         }
-        .padding()
-    }
 }
+
 
 #Preview {
     ContentView()
