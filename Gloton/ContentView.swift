@@ -8,16 +8,30 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var showMenu = false
+    @State private var selectedTab = 0
+    
     var body: some View {
         ZStack {
             Color.bg.ignoresSafeArea(.all)
             VStack {
-                Image(systemName:"list.bullet").font(.system(size: 20)).frame(maxWidth: .infinity,  alignment: .leading).padding(.leading, 20)
+//                TabView{
+//                    Text("Recetas").tabItem{
+//                        Image(systemName: "list.bullet").font(.system(size: 20))
+//                    }.badge(2)
+//                    
+//                    Text("Perfil").tabItem{
+//                        Image(systemName: "person.circle").font(.system(size: 20))
+//                    }.badge(3)
+//                }
+                HStack {
+                    Image(systemName:"text.justify").font(.system(size: 20)).frame(maxWidth: .infinity,  alignment: .leading).padding(.leading, 20)
+                }
                 Text("¿Que te gustaria cocinar hoy?").padding().font(.title).fontWeight(.bold).multilineTextAlignment(.center)
                 HStack{
                     Image(systemName: "magnifyingglass").padding(10)
                     TextField("Birria de res", text: .constant(""))
-                }.background(Color.gray.opacity(0.3)).cornerRadius(10).shadow(radius: 5).padding()
+                }.background(Color.gray.opacity(0.3)).cornerRadius(10).shadow(radius: 10).padding()
                 
                 VStack{
                     Text("Pensados para ti").padding().font(.title2).fontWeight(.bold).frame(maxWidth: .infinity,  alignment: .leading)
