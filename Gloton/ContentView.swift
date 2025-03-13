@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @State private var showMenu = false
     @State private var selectedTab = 0
-    
+    @AppStorage("darkMode") var isDarkMode = false
     var body: some View {
         ZStack {
             Color.bg.ignoresSafeArea(.all)
@@ -24,9 +24,6 @@ struct ContentView: View {
 //                        Image(systemName: "person.circle").font(.system(size: 20))
 //                    }.badge(3)
 //                }
-                HStack {
-                    Image(systemName:"text.justify").font(.system(size: 20)).frame(maxWidth: .infinity,  alignment: .leading).padding(.leading, 20)
-                }
                 Text("¿Que te gustaria cocinar hoy?").padding().font(.title).fontWeight(.bold).multilineTextAlignment(.center)
                 HStack{
                     Image(systemName: "magnifyingglass").padding(10)
@@ -93,7 +90,19 @@ struct ContentView: View {
         
                     }.background(Color.btn.opacity(0.9)).cornerRadius(60).padding(.horizontal)
                 }
+            contentSideMenuView(isShowing: $showMenu, selectedMenuItem: $selectedTab)
             }
+        .toolbar{
+            ToolbarItem(placement: .topBarLeading){
+                Button(action:{
+                    showMenu.toggle()
+                }, label: {
+                    Image(systemName: "text.justify")
+                        .foregroundColor(isDarkMode ? .white : .gray)
+                })
+                
+            }
+        }
         }
 }
 
