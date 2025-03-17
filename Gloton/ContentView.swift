@@ -14,14 +14,12 @@ struct ContentView: View {
     var body: some View {
         
         NavigationStack {
+            
             ZStack {
-                
-                
                 
                 TabView {
                     
                     VStack {
-                        
                         
                         //                TabView{
                         //                    Text("Recetas").tabItem{
@@ -109,7 +107,8 @@ struct ContentView: View {
                         showMenu.toggle()
                     }, label: {
                         Image(systemName: "text.justify")
-                            .foregroundColor(isDarkMode ? .white : .gray)
+                            .foregroundColor(isDarkMode ? .blue : .black)
+
                     })
                     
                 }

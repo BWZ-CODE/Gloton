@@ -40,9 +40,13 @@ struct contentSideMenuView: View {
                             VStack(alignment:.leading){
                                 HeaderView()
                                 HStack{
-                                    Image(systemName: "moon.fill")
+                                    Image(systemName: "sun.min.fill")
+                                   
+                                    var texto = Text("Light Mode").font(.footnote)
+    
                                     
-                                    let texto = Text("Dark Mode").font(.footnote)
+                                   
+                                    
                                     
                                     Toggle("\(texto)", isOn: $isDarkModeOn)
                                     
@@ -58,7 +62,7 @@ struct contentSideMenuView: View {
                             
                         }
                     }
-                    .padding().frame(width: 270, alignment: .leading).background(isDarkModeOn ? .gray : Color.white)
+                    .padding().frame(width: 270, alignment: .leading).background(isDarkModeOn ? .gray : Color.white).foregroundStyle(isDarkModeOn ? .white: .black)
                     
                     Spacer()
                 }
@@ -66,7 +70,7 @@ struct contentSideMenuView: View {
                 
             }
         }
-        .animation(.easeInOut, value: isShowing)
+        .animation(.bouncy, value: isShowing)
     }
     private func onOptionTapped(_ option: SideMenuOptionModel) {
         selectedMenuItemIndex = option
