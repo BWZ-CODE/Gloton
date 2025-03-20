@@ -42,7 +42,7 @@ struct contentSideMenuView: View {
                                 HStack{
                                     Image(systemName: "sun.min.fill")
                                    
-                                    var texto = Text("Light Mode").font(.footnote)
+                                    let texto = Text("Light Mode").font(.footnote)
     
                                     
                                    
@@ -66,7 +66,7 @@ struct contentSideMenuView: View {
                     
                     Spacer()
                 }
-                .transition(.move(edge: .leading))
+                .transition(.move(edge: .bottom))
                 
             }
         }

@@ -62,10 +62,13 @@ struct ContentView: View {
                         VStack{
                             Text("Mas populares").font(.title2).padding().fontWeight(.bold).frame(maxWidth: .infinity, alignment: .leading)
                             ScrollView(.vertical, showsIndicators: false, content: {
-                                HStack{
-                                    Image(.b59Bc74Ff811F55Fff1893910268Ab59).resizable().frame(width: 100, height: 100).clipShape(Circle())
-                                    Text("Receta de Pollo caramelizado con especias")
+                                NavigationLink(destination: recet()){
+                                    HStack{
+                                        Image(.b59Bc74Ff811F55Fff1893910268Ab59).resizable().frame(width: 100, height: 100).clipShape(Circle())
+                                        Text("Pollo en salsa de champiñones").foregroundStyle(Color.black)
+                                    }
                                 }
+                               
                                 HStack{
                                     Image(.b59Bc74Ff811F55Fff1893910268Ab59).resizable().frame(width: 100, height: 100).clipShape(Circle())
                                     Text("Receta de Pollo caramelizado con especias")
