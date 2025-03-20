@@ -15,8 +15,9 @@ struct ContentView: View {
         
         NavigationStack {
             
+            
             ZStack {
-                
+                Color.black.opacity(0.25).edgesIgnoringSafeArea(.all)
                 TabView {
                     
                     VStack {
@@ -30,7 +31,7 @@ struct ContentView: View {
                         //                        Image(systemName: "person.circle").font(.system(size: 20))
                         //                    }.badge(3)
                         //                }
-                        Text("¿Que quieres cocinar?").padding().font(.title).fontWeight(.bold).multilineTextAlignment(.center)
+                        Text("¿Que quieres cocinar?").fontDesign(.rounded).padding().font(.title).fontWeight(.bold).multilineTextAlignment(.center)
                         HStack{
                             Image(systemName: "magnifyingglass").padding(10)
                             TextField("Birria de res", text: .constant(""))
@@ -60,7 +61,7 @@ struct ContentView: View {
                             })
                         }.background(Color.btn.opacity(0.9)).cornerRadius(20).padding(.horizontal)
                         VStack{
-                            Text("Mas populares").font(.title2).padding().fontWeight(.bold).frame(maxWidth: .infinity, alignment: .leading)
+                            Text("Mas populares").fontDesign(.rounded).font(.title2).padding().fontWeight(.bold).frame(maxWidth: .infinity, alignment: .leading)
                             ScrollView(.vertical, showsIndicators: false, content: {
                                 NavigationLink(destination: recet()){
                                     HStack{
@@ -118,6 +119,7 @@ struct ContentView: View {
             }
             
         }.padding(0)
+       
         
     }
     
